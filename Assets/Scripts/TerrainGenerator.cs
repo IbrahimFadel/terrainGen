@@ -6,7 +6,7 @@ public class TerrainGenerator : MonoBehaviour {
 	public int width = 256;
 	public int height = 256;
 
-	public float scale = 10f;
+	public float scale = 5f;
 
 	public float offsetX = 100f;
 	public float offsetY = 100f;
@@ -19,6 +19,9 @@ public class TerrainGenerator : MonoBehaviour {
 	void Update() {
 		Terrain terrain = GetComponent<Terrain> ();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
+
+		//offsetX += Time.deltaTime * 1f;
+		//offsetY += Time.deltaTime * 1f;	
 	}
 
 	TerrainData GenerateTerrain(TerrainData terrainData) {
