@@ -20,9 +20,17 @@ public class TerrainGenerator : MonoBehaviour {
 		Terrain terrain = GetComponent<Terrain> ();
 		terrain.terrainData = GenerateTerrain (terrain.terrainData);
 
-		//offsetX += Time.deltaTime * 1f;
-		//offsetY += Time.deltaTime * 1f;	
+		//offsetX += Time.deltaTime * 0.1f;
+		//offsetY += Time.deltaTime * 0.1f;	
 	}
+
+	/*void FixedUpdate() {
+		float moveHorizontal = Input.GetAxis ("Horizontal");
+		float moveVertical = Input.GetAxis ("Vertical");
+
+		offsetX += Time.deltaTime * moveHorizontal * 0.5f;
+		offsetY += Time.deltaTime * moveVertical * -1 * 0.5f;
+	}*/
 
 	TerrainData GenerateTerrain(TerrainData terrainData) {
 		terrainData.heightmapResolution = width + 1;
